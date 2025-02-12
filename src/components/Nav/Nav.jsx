@@ -1,10 +1,11 @@
 import "./Nav.scss";
 import NavButton from "../NavButton/NavButton";
+import NavLogo from "../NavLogo/NavLogo";
 
 export default function Nav() {
     return (
         <section className="nav">
-            <h1 className="nav__header">Snaps</h1>
+            <NavLogo />
             <NavButton />
         </section>
     )

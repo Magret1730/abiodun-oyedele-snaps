@@ -2,26 +2,31 @@
 
 .hero {
     @include flex(column, center, flex-start);
-    padding: 1.5rem 1rem;
-    padding-bottom: 2rem;
+    padding: 1.5rem 1rem 2rem 1rem;
+
+    @include tablet-breakpoint {
+        padding: 2rem 1.5rem 2.5rem 1.5rem;
+    }
 
     &__header {
         font-weight: 300;
         padding-bottom: 1rem;
+
+        @include tablet-breakpoint {
+            font-size: 1.375rem;
+            padding-bottom: 1.5rem;
+        }
     }
 
     &__texts {
         @include typeKit(1.625rem, 2.375rem, 300, normal);
+
+        @include tablet-breakpoint {
+            @include typeKit(2.25rem, 4.125rem, 300, normal);
+        }
 
         &-span {
             font-style: italic;
         }
     }
 }
-
-// @mixin typeKit($size, $height, $weight, $style) {
-//     font-size: $size;
-//     line-height: $height;
-//     font-weight: $weight;
-//     font-style: $style;
-// }

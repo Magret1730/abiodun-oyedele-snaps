@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @mixin flex($direction, $justify, $align) {
     display: flex;
     flex-direction: $direction;
@@ -10,4 +12,16 @@
     line-height: $height;
     font-weight: $weight;
     font-style: $style;
+}
+
+@mixin tablet-breakpoint {
+    @media (min-width: $tablet-breakpoint) {
+        @content
+    }
+}
+
+@mixin desktop-breakpoint {
+    @media (min-width: $desktop-breakpoint) {
+        @content
+    }
 }

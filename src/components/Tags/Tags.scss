@@ -3,8 +3,11 @@
 
 .tags {
     @include flex(row, flex-start, center);
-    width: 85%;
-    // border: .125rem solid red;
+    // width: 85%;
+
+    @include tablet-breakpoint {
+        // @include flex(row, flex-end, center);
+    }
 
     &__button {
         border: .0625rem solid $border-color;
@@ -12,7 +15,10 @@
         background-color: $alternate-text-color;
         padding: .375rem .5rem;
         margin: .5rem .25rem;
-        font-size: .6563rem;
-        font-weight: 400;
+        @include typeKit(.6563rem, null, 400, null);
+
+        @include tablet-breakpoint {
+            
+        }
     }
 }

@@ -4,17 +4,10 @@
 
 .nav {
     @include flex(row, space-between, center);
-    padding: 1.5rem 1rem 1.5rem 1rem;
-    position: sticky;
+    padding: 1.5rem 1rem;
+    // position: sticky;
 
-    &__header {
-        @include typeKit(2rem, 2rem, 400, normal)
+    @include tablet-breakpoint {
+        padding: 2rem 1.5rem;
     }
 }
-
-// @mixin typeKit($size, $height, $weight, $style) {
-//     font-size: $size;
-//     line-height: $height;
-//     font-weight: $weight;
-//     font-style: $style;
-// }

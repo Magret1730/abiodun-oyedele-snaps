@@ -2,31 +2,61 @@
 @use "../../styles/partials/variables" as *;
 
 .cardlist {
-    padding: 0 1rem;
+    margin: 0 1rem;
+
+    @include tablet-breakpoint {
+        @include flex(row, space-between, center);
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 0 1.5rem;
+    }
 
     &__containers {
-        @include flex(column, center, stretch);
-        width: 100%;
+        @include flex(column, center, flex-start);
         margin: 1rem 0;
         border-radius: 0.5rem;
         border: .0625rem solid $border-color;
         background-color: $alternate-background-color;
+
+        @include tablet-breakpoint {
+            width: calc(50% - 0.7rem); // Adjust based on your ga
+        }
     }
 
     &__container {
+        @include flex(column, flex-end,flex-end);
         position: relative;
-    }
 
-        // $alternate-background-color: #E4EFEC; //sage
-                // $border-color: #B7CEC9; // sea-green
+        @include tablet-breakpoint {
+            // @include flex(row, null, null);
+            // width: 20%;
+        }
+    }
 
     &__image {
         width: 100%;
         background-color: $alternate-background-color;
-        border: .125rem solid red;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+
+        @include tablet-breakpoint {
+            // width: 50%;
+        }
     }
 
+    &__name {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: $alternate-background-color;
+        padding: .375rem .5rem;
+        font-size: .6563rem;
+        border-top-left-radius: .375rem;
+        font-weight: 400;
 
-
-    
+        @include tablet-breakpoint {
+            font-size: .75rem;
+            border: 2px solid red;
+        }
+    }
 }
