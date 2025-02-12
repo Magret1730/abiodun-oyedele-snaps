@@ -1,0 +1,18 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.tags {
+    @include flex(row, flex-start, center);
+    width: 85%;
+    // border: .125rem solid red;
+
+    &__button {
+        border: .0625rem solid $border-color;
+        border-radius: .375rem;
+        background-color: $alternate-text-color;
+        padding: .375rem .5rem;
+        margin: .5rem .25rem;
+        font-size: .6563rem;
+        font-weight: 400;
+    }
+}

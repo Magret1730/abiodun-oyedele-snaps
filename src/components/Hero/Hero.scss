@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+    @include flex(column, center, flex-start);
+    padding: 1.5rem 1rem;
+    padding-bottom: 2rem;
+
+    &__header {
+        font-weight: 300;
+        padding-bottom: 1rem;
+    }
+
+    &__texts {
+        @include typeKit(1.625rem, 2.375rem, 300, normal);
+
+        &-span {
+            font-style: italic;
+        }
+    }
+}
+
+// @mixin typeKit($size, $height, $weight, $style) {
+//     font-size: $size;
+//     line-height: $height;
+//     font-weight: $weight;
+//     font-style: $style;
+// }

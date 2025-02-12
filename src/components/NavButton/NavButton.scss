@@ -1,0 +1,11 @@
+@use "../../styles/partials/variables" as *;
+
+.button {
+    padding: .5rem 1rem;
+    border: .125rem solid $primary-accent-color;
+    border-radius: 40rem;
+
+    &__image {
+        margin-left: .5rem;
+    }
+}
