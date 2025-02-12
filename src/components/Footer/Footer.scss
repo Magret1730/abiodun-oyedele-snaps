@@ -5,23 +5,57 @@
     font-family: $typeface-secondary;
     padding: 4rem 1rem 1rem 1rem;
 
+    @include tablet-breakpoint {
+        padding: 4rem 1.5rem 3rem 1.5rem;
+    }
+
     &__container {
         padding: 2rem 0 1rem 0;
+
+        @include tablet-breakpoint {
+            @include flex(row, flex-start, center);
+            margin-bottom: 12rem;
+        }
+    }
+
+    &__logo {
+        @include tablet-breakpoint {
+            flex: 1;
+        }
+    }
+
+    &__box {
+        @include tablet-breakpoint {
+            @include flex(row, flex-end, center);
+            gap: 5rem;
+        }
     }
 
     &__contents {
         @include typeKit(.8125rem, 1.5rem, 400, normal);
+        padding-top: 1rem;
+
+        @include tablet-breakpoint {
+            @include typeKit(1.25rem, 2rem, 400, normal);
+        }
     }
 
     &__content {
         @extend .footer__contents;
-        padding-top: 1rem;
+
+        @include tablet-breakpoint {
+            @extend .footer__contents;
+        }
     }
 
     &__socials {
         padding-top: 2rem;
         @include flex(row, flex-start, center);
         width: 50%;
+
+        @include tablet-breakpoint {
+            display: none;
+        }
     }
 
     &__securities {
@@ -30,5 +64,24 @@
         font-size: 0.8rem;
         color: $border-color;
         gap: 1rem;
+
+        @include tablet-breakpoint {
+            @include flex(column, center, flex-start);
+            // margin-bottom: 2rem;
+            // border: 2px solid red;
+        }
+
+        &-socials {
+            display: none;
+
+            @include tablet-breakpoint {
+                display: block;
+            }
+        }
+
+        &-terms {
+            @include flex(row, flex-start, center);
+            gap: 1rem;
+        }
     }
 }

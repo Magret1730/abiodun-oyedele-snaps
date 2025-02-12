@@ -7,6 +7,9 @@
 
     @include tablet-breakpoint {
         // @include flex(row, flex-end, center);
+        // width: 90%;
+        margin-left: 0.5rem;
+        padding: 0.5rem 0;
     }
 
     &__button {
@@ -18,7 +21,9 @@
         @include typeKit(.6563rem, null, 400, null);
 
         @include tablet-breakpoint {
-            
+            @include typeKit(0.8rem, null, 400, null);
+            padding: 0.5rem 0.75rem;
+            border-radius: .5rem;
         }
     }
 }
