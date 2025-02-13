@@ -9,6 +9,10 @@
         padding: 4rem 1.5rem 3rem 1.5rem;
     }
 
+    @include desktop-breakpoint {
+        padding: 4rem 2rem 3rem 2rem;
+    }
+
     &__container {
         padding: 2rem 0 1rem 0;
 
@@ -22,12 +26,20 @@
         @include tablet-breakpoint {
             flex: 1;
         }
+
+        @include desktop-breakpoint {
+            flex: 1;
+        }
     }
 
     &__box {
         @include tablet-breakpoint {
             @include flex(row, flex-end, center);
             gap: 5rem;
+        }
+
+        @include desktop-breakpoint {
+            width: 60%;
         }
     }
 
@@ -37,6 +49,10 @@
 
         @include tablet-breakpoint {
             @include typeKit(1.25rem, 2rem, 400, normal);
+        }
+
+        @include desktop-breakpoint {
+            // width: 100%;
         }
     }
 
@@ -52,14 +68,20 @@
         padding-top: 2rem;
         @include flex(row, flex-start, center);
         width: 50%;
+        gap: 1rem;
 
         @include tablet-breakpoint {
             display: none;
         }
+
+        @include desktop-breakpoint {
+            @include flex(row, flex-end, null);
+            width: 20%;
+            padding: 0;
+        }
     }
 
     &__securities {
-        // padding-top: 1rem;
         @include flex(row, flex-start, center);
         font-size: 0.8rem;
         color: $border-color;
@@ -67,15 +89,18 @@
 
         @include tablet-breakpoint {
             @include flex(column, center, flex-start);
-            // margin-bottom: 2rem;
-            // border: 2px solid red;
         }
 
         &-socials {
             display: none;
 
             @include tablet-breakpoint {
-                display: block;
+                @include flex(row, flex-start, center);
+                gap: 1rem;
+            }
+
+            @include desktop-breakpoint {
+                display: none;
             }
         }
 

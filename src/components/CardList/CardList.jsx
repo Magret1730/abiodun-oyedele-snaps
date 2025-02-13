@@ -12,9 +12,9 @@ export default function CardList() {
                             <img className="cardlist__image" src={photo.photo} alt={photo.photographer} />
                             <p className="cardlist__name">{photo.photographer}</p>
                         </div>
-                        <Tags key={photo.tags} tags={photo.tags}/>                            
+                        <Tags key={photo.tags} tags={photo.tags} className={"tags"}/>                            
                     </div>
-                )                
+                )
             })}
         </section>
     )

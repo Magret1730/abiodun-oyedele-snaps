@@ -3,13 +3,19 @@
 
 .tags {
     @include flex(row, flex-start, center);
-    // width: 85%;
 
     @include tablet-breakpoint {
-        // @include flex(row, flex-end, center);
-        // width: 90%;
         margin-left: 0.5rem;
         padding: 0.5rem 0;
+    }
+
+    &__filter {
+        padding: 1rem 1rem;
+        background-color: $alternate-background-color;
+
+        @include tablet-breakpoint {
+            padding: 1.5rem 1.5rem 4rem 1.5rem;
+        }
     }
 
     &__button {
@@ -23,7 +29,36 @@
         @include tablet-breakpoint {
             @include typeKit(0.8rem, null, 400, null);
             padding: 0.5rem 0.75rem;
-            border-radius: .5rem;
+            border-radius: .75rem;
+        }
+
+        &-filter {
+            border: .0625rem solid $primary-accent-color;
+            border-radius: .375rem;
+            background-color: $alternate-text-color;
+            padding: .375rem .5rem;
+            margin: .25rem;
+            @include typeKit(.75rem, null, 400, null);
+            color: $primary-accent-color;
+
+            @include tablet-breakpoint {
+                padding: .5rem .75rem;
+                border-radius: .75rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    &__header {
+        padding: 0.5rem 0;
+        font-size: 1.25rem;
+        font-family: $typeface-secondary;
+        font-weight: 500;
+        color: $primary-accent-color;
+
+        @include tablet-breakpoint {
+            font-size: 1.5rem;
+            padding-bottom: 2rem;
         }
     }
 }

@@ -1,5 +1,9 @@
 import "./Footer.scss";
 import NavLogo from "../NavLogo/NavLogo";
+import FacebookIcon from "../../assets/Icons/Facebook.svg";
+import XIcon from "../../assets/Icons/X_twitter.svg";
+import InstagramIcon from "../../assets/Icons/Instagram.svg";
+import PinterestIcon from "../../assets/Icons/Pinterest.svg";
 
 export default function Footer() {
     return (
@@ -21,27 +25,27 @@ export default function Footer() {
                         <p>Support</p>
                     </div>
                     <div className="footer__socials">
-                        <img src="../../assets/Icons/Facebook.svg" alt="Facebook" />
-                        <img src="../../assets/Icons/X_twitter.svg" alt="Twitter" />
-                        <img src="../../assets/Icons/Facebook.svg" alt="Instagram" />
-                        <img src="../../assets/Icons/Pinterest.svg" alt="Pinterest" />
+                        <img src={FacebookIcon} alt="Facebook Icon" />
+                        <img src={XIcon} alt="Twitter Icon" />
+                        <img src={InstagramIcon} alt="Instagram Icon" />
+                        <img src={PinterestIcon} alt="Pinterest Icon" />
                     </div>
                 </section>
             </section>
 
             <section className="footer__securities">
                 <div className="footer__securities-socials">
-                    <img src="../../assets/Icons/Facebook.svg" alt="Facebook" />
-                    <img src="../../assets/Icons/X_twitter.svg" alt="Twitter" />
-                    <img src="../../assets/Icons/Facebook.svg" alt="Instagram" />
-                    <img src="../../assets/Icons/Pinterest.svg" alt="Pinterest" />
+                    <img src={FacebookIcon} alt="Facebook Icon" />
+                    <img src={XIcon} alt="Twitter Icon" />
+                    <img src={InstagramIcon} alt="Instagram Icon" />
+                    <img src={PinterestIcon} alt="Pinterest Icon" />
                 </div>
 
                 <div className="footer__securities-terms">
-                    <div>&copy;2024 Snaps</div>
-                    <div>Terms</div>
-                    <div>Privacy</div>
-                    <div>Cookies</div>
+                    <p>&copy;2024 Snaps</p>
+                    <p>Terms</p>
+                    <p>Privacy</p>
+                    <p>Cookies</p>
                 </div>
             </section>
         </article>

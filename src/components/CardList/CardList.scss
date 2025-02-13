@@ -11,6 +11,11 @@
         margin: 0 1.5rem;
     }
 
+    @include desktop-breakpoint {
+        margin: 2.2rem 2rem;
+        gap: 1.1rem;
+    }
+
     &__containers {
         @include flex(column, center, flex-start);
         margin: 1rem 0;
@@ -19,19 +24,18 @@
         background-color: $alternate-background-color;
 
         @include tablet-breakpoint {
-            width: calc(50% - 0.8rem);
+            width: calc(50% - 1rem);
             margin: 0.5rem 0 0 0;
+        }
+
+        @include desktop-breakpoint {
+            width: calc(33.3% - 1.1rem);
         }
     }
 
     &__container {
         @include flex(column, flex-end,flex-end);
         position: relative;
-
-        @include tablet-breakpoint {
-            // @include flex(row, null, null);
-            // width: 20%;
-        }
     }
 
     &__image {
@@ -39,10 +43,6 @@
         background-color: $alternate-background-color;
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
-
-        @include tablet-breakpoint {
-            // width: 50%;
-        }
     }
 
     &__name {
