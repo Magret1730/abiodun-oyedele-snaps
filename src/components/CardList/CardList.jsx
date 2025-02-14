@@ -1,8 +1,9 @@
-import photos from "../../data/photos.json";
+// import photos from "../../data/photos.json";
 import "./CardList.scss";
 import Tags from "../Tags/Tags";
+// import { useState } from "react";
 
-export default function CardList({ isActive }) {
+export default function CardList({ isActive, photos }) {
     return (
         <section className="cardlist">
             {photos.map((photo) => {
@@ -12,7 +13,7 @@ export default function CardList({ isActive }) {
                             <img className="cardlist__image" src={photo.photo} alt={photo.photographer} />
                             <p className="cardlist__name">{photo.photographer}</p>
                         </div>
-                        <Tags key={photo.tags} tags={photo.tags} className={"tags"}/>                            
+                        <Tags key={photo.tags} tags={photo.tags} className={"tags"} />
                     </div>
                 )
             })}

@@ -45,6 +45,11 @@
             @include typeKit(.75rem, null, 400, null);
             color: $primary-accent-color;
 
+            &:hover {
+                background-color: $primary-accent-color;
+                color: $alternate-text-color;
+            }
+
             @include tablet-breakpoint {
                 padding: .5rem .75rem;
                 border-radius: .75rem;
@@ -56,6 +61,11 @@
                 margin-bottom: 0.6rem;
             }
         }
+
+        &--clickable {
+            background-color: $primary-accent-color;
+            color: $alternate-text-color;
+        }
     }
 
     &__header {
@@ -63,7 +73,6 @@
         font-size: 1.25rem;
         font-family: $typeface-secondary;
         font-weight: 500;
-        // color: $primary-accent-color;
         color: $primary-text-color;
 
         @include tablet-breakpoint {
