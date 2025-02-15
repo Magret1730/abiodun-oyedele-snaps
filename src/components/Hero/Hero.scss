@@ -1,0 +1,68 @@
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+    @include flex(column, center, flex-start);
+    padding: 1.5rem 1rem 2rem 1rem;
+
+    @include tablet-breakpoint {
+        padding: 2.5rem 1.5rem;
+    }
+
+    @include desktop-breakpoint {
+        padding: 3rem 2rem;
+        margin-top: 8rem;
+    }
+
+    &__header {
+        font-weight: 300;
+
+        @include tablet-breakpoint {
+            font-size: 1.375rem;
+            padding-top: 1.5rem
+        }
+
+        @include desktop-breakpoint {
+            padding-top: 0;
+        }
+
+        &-filters {
+            @include typeKit(0.7rem, null, 300, null);
+
+            @include tablet-breakpoint {
+                font-size: 1.375rem;
+            }
+        }
+    }
+
+    &__texts {
+        @include typeKit(1.625rem, 2.375rem, 300, normal);
+        padding-top: 1.5rem;
+
+        @include tablet-breakpoint {
+            @include typeKit(2.25rem, 4.125rem, 300, normal);
+        }
+
+        @include desktop-breakpoint {
+            width: 50%;
+            @include typeKit(3.2rem, 4.5rem, 300, normal);
+        }
+
+        &-filters {
+            @include typeKit(1.625rem, 2.375rem, 300, null);
+            padding-top: 1.5rem;
+
+            @include tablet-breakpoint {
+                @include typeKit(2.3rem, 4.5rem, 300, normal);
+            }
+
+            @include desktop-breakpoint {
+                @include typeKit(3.12rem, 4.5rem, 300, normal);
+                width: 70%;
+            }
+        }
+
+        &-span {
+            font-style: italic;
+        }
+    }
+}

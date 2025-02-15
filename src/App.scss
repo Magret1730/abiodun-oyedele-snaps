@@ -1,0 +1,29 @@
+@use "../src/styles/partials/globals" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+
+.app{
+    padding-top: 5rem;
+
+    @include desktop-breakpoint {
+        padding-top: 0;
+    }
+
+    &__aside {
+        margin-top: 5rem;
+    
+        @include desktop-breakpoint {
+            flex: 0 0 30%;
+            background-color: $alternate-background-color;
+        }
+    }
+
+    &__container {
+        @include desktop-breakpoint {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    
+    }
+}
