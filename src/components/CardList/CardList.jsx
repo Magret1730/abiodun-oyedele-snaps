@@ -1,7 +1,5 @@
-// import photos from "../../data/photos.json";
 import "./CardList.scss";
 import Tags from "../Tags/Tags";
-// import { useState } from "react";
 
 export default function CardList({ isActive, photos }) {
     return (

@@ -11,7 +11,6 @@
 
     &__filter {
         padding: 1rem 1rem;
-        background-color: $alternate-background-color;
 
         @include tablet-breakpoint {
             padding: 3rem 1rem 4.5rem 1.5rem;
@@ -20,18 +19,7 @@
         @include desktop-breakpoint {
             display: flex;
             flex-wrap: wrap;
-            padding: 1.5rem 2rem 4.5rem 2rem;
-            // flex: 1;
-            column-gap: 600rem;
-        }
-    }
-
-    &-container {
-        @include desktop-breakpoint {
-            // display: flex;
-            // gap: 3rem;
-            // flex-wrap: wrap;
-            // flex: 1;
+            padding: 1.5rem 2rem;
         }
     }
 
@@ -48,14 +36,6 @@
             padding: 0.5rem 0.75rem;
             border-radius: .75rem;
         }
-
-        // &-wrapper {
-        //     // display: hidden;
-        //     @include desktop-breakpoint {
-        //         flex: 1 1 calc(25% - 1rem); // Four buttons per row with gap adjustment
-        //         display: flex;
-        //     }
-        // }
 
         &-filter {
             border: .0625rem solid $primary-accent-color;
@@ -78,7 +58,6 @@
             }
 
             @include desktop-breakpoint {
-                // font-size: 0.85rem;
                 margin-bottom: 0.6rem;
                 flex: 1;
             }
@@ -91,10 +70,9 @@
     }
 
     &__header {
+        @include typeKit(1.25rem, null, 500, null);
         padding: 0.5rem 0;
-        font-size: 1.25rem;
         font-family: $typeface-secondary;
-        font-weight: 500;
         color: $primary-text-color;
 
         @include tablet-breakpoint {

@@ -5,7 +5,7 @@ export default function Tags({ tags, className, handleTagsClick, activeTags}) {
         <section className={className}>
             {className == "tags__filter" && <h1 className="tags__header">Filters</h1>}
 
-            <div className="tags__container">
+            <div className="">
                 {tags.map((tag) => {
                     const isActiveTag = activeTags === tag;
                     return (         

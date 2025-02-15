@@ -1,9 +1,7 @@
 import "./NavButton.scss";
-// import FilterIcon from "../../assets/Icons/Filter.svg";
 
 export default function NavButton({ clickHandler, isActive }) {
     return (
-        // <button className="button" onClick={clickHandler} >
         <button className= { `button ${isActive ? "button--active" : ""} `} onClick={clickHandler} >
             <span className="button__text">Filters</span>
             

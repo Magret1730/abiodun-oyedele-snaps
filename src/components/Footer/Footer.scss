@@ -50,10 +50,6 @@
         @include tablet-breakpoint {
             @include typeKit(1.25rem, 2rem, 400, normal);
         }
-
-        @include desktop-breakpoint {
-            // width: 100%;
-        }
     }
 
     &__content {

@@ -9,29 +9,21 @@
     @include desktop-breakpoint {
         padding-top: 0;
     }
-}
 
-.app__aside {
-    margin-top: 5rem;
+    &__aside {
+        margin-top: 5rem;
+    
+        @include desktop-breakpoint {
+            flex: 0 0 30%;
+            background-color: $alternate-background-color;
+        }
+    }
 
-    @include desktop-breakpoint {
-        float: right;
-        display: flex;
-        width: 25%;
-        // height: 100vh;
-        margin-left: 2rem;
-        background-color: $alternate-background-color;
-        padding-bottom: 17rem;
+    &__container {
+        @include desktop-breakpoint {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    
     }
 }
-
-// .app__container {
-//     @include desktop-breakpoint {
-//         display: flex;
-//         flex-direction: row-reverse;
-//         // flex-wrap: wrap;
-//         // width: 25%;
-//         height: auto;
-//     }
-    
-// }
