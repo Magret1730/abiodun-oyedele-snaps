@@ -15,9 +15,9 @@ function App() {
 
   const onClick = () => {
     setIsActive(!isActive);
-  }  
+  }
 
-  const handleTagsClick = (e) => {
+  const handleFilterClick = (e) => {
       const clickedTag = e.target.textContent;
 
       // If the clicked tag is already active, deactivate it
@@ -35,18 +35,21 @@ function App() {
   };
 
   return (
-    <main>
-      <Nav clickHandler={onClick}/>
+    <main className={ `${isActive ? "" : "app"}` }>
+      <Nav clickHandler={onClick} isActive={isActive}/>
 
-      <aside className={ `${isActive ? "app-aside" : "" }` }>
-        { isActive && 
-          <Tags tags={TagList} className={"tags__filter"} handleTagsClick={handleTagsClick} activeTags={activeTags} />
-        }
-      </aside>
+      <section className={ `${isActive ? "app__container" : ""}` }>
+        <aside className={ `${isActive ? "app__aside" : "" }` }>
+          { isActive && 
+            <Tags tags={TagList} className={"tags__filter"} handleTagsClick={handleFilterClick} activeTags={activeTags} />
+          }
+        </aside>
 
-      <Hero isActive={isActive} />
-      
-      <CardList isActive={isActive} photos={filteredPhotos}/>
+        <section>
+          <Hero isActive={isActive} />
+          <CardList isActive={isActive} photos={filteredPhotos} />
+        </section>
+      </section>
 
       <Footer />
     </main>

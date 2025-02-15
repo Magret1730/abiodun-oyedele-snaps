@@ -5,11 +5,11 @@
 .nav {
     @include flex(row, space-between, center);
     padding: 1.5rem 1rem;
-    // position: fixed;
-    // top: 0;
-    // width: 100%;
-    // z-index: 5000;
-
+    position: fixed;
+    z-index: 2;
+    background-color: $primary-background-color;
+    top: 0;
+    width: 100%;
 
     @include tablet-breakpoint {
         padding: 2rem 1.5rem;
@@ -17,5 +17,6 @@
 
     @include desktop-breakpoint {
         padding: 2.2rem 2rem;
+        // margin-bottom: 5rem;
     }
 }

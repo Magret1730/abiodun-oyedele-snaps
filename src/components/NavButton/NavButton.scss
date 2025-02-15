@@ -5,24 +5,40 @@
     padding: .5rem 1rem;
     border: .125rem solid $primary-accent-color;
     border-radius: 40rem;
-    color: $primary-accent-color;
     background-color: $alternate-text-color;
-
-    &:hover {
-        background-color: $primary-accent-color;
-        color: $alternate-text-color;
-    }
 
     @include tablet-breakpoint {
         padding: .6875rem 1.375rem;
     }
 
+    &:hover {
+        background-color: $primary-accent-color;
+        color: $alternate-text-color;
+
+        .button__text {
+            background-color: $primary-accent-color;
+            color: $alternate-text-color;
+        }
+
+        .button__image {
+            fill: $alternate-text-color;
+        }
+    }
+
+    &--active {
+        @extend .button, :hover;
+    }
+
+    &__text {
+        font-weight: 400;
+        color: $primary-accent-color;
+
+        // @include tablet-breakpoint {
+        //     // color: $alternate-text-color;
+        // }
+    }
+
     &__image {
         margin-left: .5rem;
-
-        // Fix the hover state on the image icon
-        // &:hover {
-        //     color: $alternate-text-color;
-        // }
     }
 }

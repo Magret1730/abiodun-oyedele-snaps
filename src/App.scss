@@ -2,13 +2,36 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 
-.app-aside {
+
+.app{
+    padding-top: 5rem;
+
     @include desktop-breakpoint {
-        float: right;
-        width: 25%;
-        max-height: 100vh;
-        margin-left: 2rem;
-        padding-bottom: 360rem;
-        background-color: $alternate-background-color;
+        padding-top: 0;
     }
 }
+
+.app__aside {
+    margin-top: 5rem;
+
+    @include desktop-breakpoint {
+        float: right;
+        display: flex;
+        width: 25%;
+        // height: 100vh;
+        margin-left: 2rem;
+        background-color: $alternate-background-color;
+        padding-bottom: 17rem;
+    }
+}
+
+// .app__container {
+//     @include desktop-breakpoint {
+//         display: flex;
+//         flex-direction: row-reverse;
+//         // flex-wrap: wrap;
+//         // width: 25%;
+//         height: auto;
+//     }
+    
+// }
