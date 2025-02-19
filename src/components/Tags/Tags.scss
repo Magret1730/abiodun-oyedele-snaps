@@ -68,6 +68,21 @@
             }
         }
 
+        &-details {
+            border: .0625rem solid $border-color;
+            border-radius: .375rem;
+            background-color: $alternate-text-color;
+            padding: .375rem .5rem;
+            margin: .5rem .25rem;
+            @include typeKit(.6563rem, null, 400, null);
+        
+            @include tablet-breakpoint {
+                @include typeKit(0.8rem, null, 400, null);
+                padding: 0.5rem 0.75rem;
+                border-radius: .75rem;
+            }
+        }
+
         &--clickable {
             background-color: $primary-accent-color;
             color: $alternate-text-color;
