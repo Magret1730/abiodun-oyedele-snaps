@@ -1,8 +1,8 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.cardlist {
-    margin: 0 1rem;
+.details {
+    margin: 6rem 1rem 0 1rem;
 
     @include tablet-breakpoint {
         @include flex(row, space-between, center);
@@ -31,23 +31,6 @@
         @include desktop-breakpoint {
             width: calc(33.3% - 1.1rem);
         }
-
-        &-filters {
-            background-color: $alternate-background-color;
-            border: .0625rem solid $border-color;
-            border-radius: 0.5rem;
-            margin: 1rem 0 0 0;
-
-            @include tablet-breakpoint {
-                width: calc(50% - 1rem);
-                margin: 0.5rem 0 0 0;
-            }
-        }
-    }
-
-    &__container {
-        @include flex(column, flex-end,flex-end);
-        position: relative;
     }
 
     &__image {
@@ -57,19 +40,50 @@
         border-top-right-radius: 0.5rem;
     }
 
+    &__container {
+        margin: 0 1rem;
+        width: 100%;
+        font-family: $typeface-secondary;
+    }
+
+    &__box {
+        @include flex(row, space-between, center);
+        // width: 80%;
+        margin-right: 2rem;
+        margin-top: 0.6rem;
+    }
+
+    &__group {
+        @include flex(row, flex-start, center);
+        gap: 0.2rem;
+    }
+
+    &__icon {
+        width: 20%;
+    }
+
+    &__like {
+        font-size: 0.8rem;
+    }
+
+    &__date {
+        font-size: 0.8rem;
+    }
+
     &__name {
         font-family: $typeface-secondary;
-        color: $primary-text-color;
-        position: absolute;
-        bottom: 0;
-        right: 0;
         background-color: $alternate-background-color;
-        padding: .375rem .5rem;
+        padding: .6rem 0 1rem 0;
         border-top-left-radius: .375rem;
-        @include typeKit(.6563rem, null, 400, null);
+        @include typeKit(.75rem, null, 400, null);
+        width: 80%;
 
         @include tablet-breakpoint {
             font-size: 0.7rem;
+        }
+
+        &--space {
+            padding-left: 0.3rem;
         }
     }
 }

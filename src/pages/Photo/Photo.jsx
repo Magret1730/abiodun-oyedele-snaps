@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Nav from "../../components/Nav/Nav";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import DetailsCard from "../../components/DetailsCard/DetailsCard";
+import Footer from "../../components/Footer/Footer";
 
 function Photo() {
     const { id } = useParams();
@@ -31,9 +33,8 @@ function Photo() {
     return (
         <>
             <Nav />
-            <h1>Welcome to photo -- {id}</h1>
-            <div>title: {photo.photoDescription}</div>
-            <Link to="/">back</Link>
+            <DetailsCard photo={photo}/>
+            <Footer />
         </>
     )
 }

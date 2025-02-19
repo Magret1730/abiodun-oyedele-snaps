@@ -9,6 +9,11 @@
         padding: 0.5rem 0;
     }
 
+    &__details {
+        @extend .tags;
+        margin-left: 0.7rem;
+    }
+
     &__filter {
         padding: 1rem 1rem;
 
