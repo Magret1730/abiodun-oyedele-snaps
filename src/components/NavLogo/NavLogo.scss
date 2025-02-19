@@ -2,11 +2,15 @@
 @use "../../styles/partials/variables" as *;
 
 .logo {
-    @include typeKit(2rem, 2rem, 400, normal);
-    color: $primary-text-color;
-    font-family: $typeface-primary;
+    text-decoration: none;
 
-    @include tablet-breakpoint {
-        @include typeKit(2.5rem, 2.5rem, 400, normal);
+    &__text {
+        @include typeKit(2rem, 2rem, 400, normal);
+        color: $primary-text-color;
+        font-family: $typeface-primary;
+    
+        @include tablet-breakpoint {
+            @include typeKit(2.5rem, 2.5rem, 400, normal);
+        }
     }
 }

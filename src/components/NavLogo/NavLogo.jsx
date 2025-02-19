@@ -2,6 +2,8 @@ import "./NavLogo.scss";
 
 export default function NavLogo() {
     return (
-        <h1 className="logo">Snaps</h1>
+        <a className="logo" href="/">
+            <h1 className="logo__text">Snaps</h1>
+        </a>
     )
 }
