@@ -6,7 +6,6 @@ import CardList from "../../components/CardList/CardList";
 import Footer from "../../components/Footer/Footer";
 import TagList from "../../data/tags.json";
 import Tags from "../../components/Tags/Tags";
-// import photos from "../../data/photos.json";
 import axios from "axios";
 
 function Home() {
@@ -25,7 +24,6 @@ function Home() {
     async function fetchPhotos() {
         try {
             const { data } = await axios.get(`${BASE_URL}/photos?api_key=${API_KEY}`);
-            // console.log(data);
             setPhotos(data);
             setFilteredPhotos(data);
         } catch (error) {
