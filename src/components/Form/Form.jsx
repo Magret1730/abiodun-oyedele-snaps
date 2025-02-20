@@ -1,9 +1,16 @@
 import { useState } from "react";
 import "./Form.scss";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-export default function Form() {
+export default function Form({fetchComments}) {
     const [ name, setName ] = useState("");
     const [ comment, setComment ] = useState("");
+
+    const {id} = useParams();
+    const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
+    const API_KEY = "e3b638d4-7a00-4b19-8713-677d535d16cc";
+
 
     const handleChangeName = (event) => {
         setName(event.target.value);
@@ -35,24 +42,43 @@ export default function Form() {
         return true;
     }
 
+    const postComment = async (name, comment) => {
+
+        const newComment = {
+            "name": name,
+            "comment": comment
+        }
+
+        try {
+            const response = await axios.post(`${BASE_URL}/photos/${id}/comments?api_key=${API_KEY}`, newComment);
+
+            return response;
+        } catch (error) {
+            console.error("Error gettin response from postComment function", error);
+        }
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(name, comment);
 
-        // try {
-                if (isFormValid()) {
+        try {
+            if (isFormValid()) {
                 alert("Submitted successfully!!!");
                 setName("");
                 setComment("");
 
-                // await axios.post(`url`, { name, comment });
-                // fetchComments()
+                const response = await postComment(name, comment);
+                if (!response) {
+                    console.error("Error getting response from postComment", response);
+                }
+
+                fetchComments();
             } else {
                 console.error("Error in the form");
             }
-        // } catch (error) {
-        //     console.error("Error from postComment", error)
-        // }
+        } catch (error) {
+            console.error("Error from postComment", error)
+        }
         
     };
 

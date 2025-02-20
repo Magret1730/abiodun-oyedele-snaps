@@ -13,9 +13,14 @@ function Photo() {
     const API_KEY = "e3b638d4-7a00-4b19-8713-677d535d16cc";
 
     const [photo, setPhoto] = useState(null);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         fetchPhotos();
+    }, []);
+
+    useEffect(() => {
+        fetchComments();
     }, []);
 
     async function fetchPhotos() {
@@ -31,12 +36,25 @@ function Photo() {
         return <div>loading...</div>
     }
 
+    if (!comments) {
+        return <div>loading...</div>
+    }
+
+    async function fetchComments() {
+        try{
+            const {data} = await axios.get(`${BASE_URL}/photos/${id}/comments?api_key=${API_KEY}`);
+            setComments(data);
+        } catch (error) {
+            console.error("Error fetching comments", error)
+        }
+    }
+
     return (
         <>
             <Nav />
             <DetailsCard photo={photo}/>
-            <Form />
-            <CommentList id={id} />
+            <Form fetchComments={fetchComments}/>
+            <CommentList id={id} comments={comments}/>
             <Footer />
         </>
     )
