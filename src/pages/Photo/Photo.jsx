@@ -5,6 +5,7 @@ import Nav from "../../components/Nav/Nav";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import Footer from "../../components/Footer/Footer";
 import Form from "../../components/Form/Form";
+import CommentList from "../../components/CommentLists/CommentLists";
 
 function Photo() {
     const { id } = useParams();
@@ -35,6 +36,7 @@ function Photo() {
             <Nav />
             <DetailsCard photo={photo}/>
             <Form />
+            <CommentList id={id} />
             <Footer />
         </>
     )

@@ -35,16 +35,25 @@ export default function Form() {
         return true;
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(name, comment);
 
-        if (isFormValid()) {
-            alert("Submitted successfully!!!");
-            setName("");
-            setComment("");
-        } else {
-            console.error("Error in the form");
-        }
+        // try {
+                if (isFormValid()) {
+                alert("Submitted successfully!!!");
+                setName("");
+                setComment("");
+
+                // await axios.post(`url`, { name, comment });
+                // fetchComments()
+            } else {
+                console.error("Error in the form");
+            }
+        // } catch (error) {
+        //     console.error("Error from postComment", error)
+        // }
+        
     };
 
     return (
