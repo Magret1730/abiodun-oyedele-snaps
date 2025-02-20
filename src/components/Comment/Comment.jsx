@@ -5,11 +5,11 @@ export default function Comment({ comment}) {
 
     return (
         <section className="comment">
-                <section className="comment__box">
-                    <div>{comment.name}</div>
-                    <div>{formattedDate}</div>
-                </section>
-                <section className="comment__comment">{comment.comment}</section>
+            <section className="comment__box">
+                <div className="comment__name">{comment.name}</div>
+                <div className="comment__date">{formattedDate}</div>
+            </section>
+            <section className="comment__comment">{comment.comment}</section>
         </section>
     )
 }

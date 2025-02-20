@@ -1,0 +1,9 @@
+@use "../../styles/partials/variables" as *;
+
+.comment__length {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    font-family: $typeface-secondary;
+}

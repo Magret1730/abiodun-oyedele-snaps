@@ -1,3 +1,26 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .comment {
-    margin: 1rem 1rem;
+    margin: 0rem 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid $primary-accent-color;
+
+    &__box {
+        @include flex(row, space-between, center);
+        margin-bottom: 1rem;
+    }
+
+    &__name {
+        font-size: 0.7rem;
+        color: $primary-accent-color;
+    }
+
+    &__date {
+        font-size: 0.7rem;
+    }
+
+    &__comment {
+        font-size: 0.8rem;
+    }
 }

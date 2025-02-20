@@ -31,7 +31,7 @@ export default function CommentLists({ id }) {
 
     return (
         <>
-            <section>{comments.length}</section>
+            <section className="comment__length">{comments.length} Comments</section>
             {comments
             .sort((a, b) => b.timestamp - a.timestamp)
             .map((comment) => {
