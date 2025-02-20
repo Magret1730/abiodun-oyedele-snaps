@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Nav from "../../components/Nav/Nav";
-// import { Link } from "react-router-dom";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import Footer from "../../components/Footer/Footer";
+import Form from "../../components/Form/Form";
 
 function Photo() {
     const { id } = useParams();
@@ -34,6 +34,7 @@ function Photo() {
         <>
             <Nav />
             <DetailsCard photo={photo}/>
+            <Form />
             <Footer />
         </>
     )

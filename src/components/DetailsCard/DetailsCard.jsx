@@ -1,6 +1,6 @@
 import "./DetailsCard.scss";
-import Pinterest from "../../assets/Icons/Pinterest.svg";
 import DetailsTags from "../DetailsTag/DetailsTag";
+import LikedOutline from "../../assets/Icons/Like_Outline.svg";
 
 export default function DetailsCard({ photo }) {
     const likeDate = new Date(photo.timestamp).toLocaleDateString();
@@ -15,7 +15,7 @@ export default function DetailsCard({ photo }) {
                 <section className="details__container">
                     <div className="details__box">
                         <div className="details__group">
-                            <img className="details__icon" src={Pinterest} alt="Pinterest Icon" />
+                            <img className="details__icon" src={LikedOutline} alt="Pinterest Icon" />
                             <span className="details__like">{photo.likes} likes</span>
                         </div>
                         <p className="details__box-name">Photo by <span className="details__name--space">{photo.photographer}</span></p>
