@@ -2,7 +2,6 @@
 @use "../../styles/partials/mixins" as *;
 
 .comment {
-    margin: 0rem 1rem;
     padding: 1rem 0;
     border-top: 1px solid $primary-accent-color;
     font-family: $typeface-secondary;
@@ -15,13 +14,25 @@
     &__name {
         font-size: 0.7rem;
         color: $primary-accent-color;
+
+        @include tablet-breakpoint {
+            font-size: 0.8rem;;
+        }
     }
 
     &__date {
-        font-size: 0.7rem;
+        @extend .comment__name;
+
+        @include tablet-breakpoint {
+            font-size: 0.8rem;
+        }
     }
 
     &__comment {
         font-size: 0.8rem;
+
+        @include tablet-breakpoint {
+            font-size: 1.2rem;
+        }
     }
 }
