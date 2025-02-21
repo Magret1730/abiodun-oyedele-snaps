@@ -6,6 +6,8 @@ import axios from "axios";
 export default function Form({fetchComments}) {
     const [ name, setName ] = useState("");
     const [ comment, setComment ] = useState("");
+    // const [nameError, setNameError] = useState(false);
+    // const [commentError, setCommentError] = useState(false);
 
     const {id} = useParams();
     const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
@@ -21,8 +23,22 @@ export default function Form({fetchComments}) {
     }
 
     const isNameValid = () => {
+        if (!name) {
+            alert("Fill out the name field");
+            return false;
+        }
+
         if (name.length < 2) {
-            alert("Name should be greater than a letter!!!");
+            alert("Name should be greater than one length!!!");
+            return false;
+        }
+
+        return true;
+    }
+
+    const isCommentValid = () => {
+        if (!comment) {
+            alert("Fill out the comment field");
             return false;
         }
 
@@ -30,12 +46,16 @@ export default function Form({fetchComments}) {
     }
 
     const isFormValid = () => {
-        if (!name || !comment) {
-            alert("Fill out each fields");
+        // if (!name || !comment) {
+        //     alert("Fill out each fields");
+        //     return false;
+        // }
+
+        if (!isNameValid()) {
             return false;
         }
 
-        if (!isNameValid()) {
+        if (!isCommentValid()) {
             return false;
         }
 
@@ -54,7 +74,7 @@ export default function Form({fetchComments}) {
 
             return response;
         } catch (error) {
-            console.error("Error gettin response from postComment function", error);
+            console.error("Error getting response from postComment function", error);
         }
     }
 
@@ -87,6 +107,7 @@ export default function Form({fetchComments}) {
             <label className="form__label">Name
                 <input
                     className="form__input"
+                    // className={`form__input ${ isNameValid() === false ? "" : "form__input--error" }`}
                     type="text"
                     name="name"
                     value={name}

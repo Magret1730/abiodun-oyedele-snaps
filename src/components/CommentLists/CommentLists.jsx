@@ -5,7 +5,10 @@ export default function CommentLists({ comments }) {
 
     return (
         <section className="comments">
-            <section className="comments__length">{comments.length} Comments</section>
+            <section className="comments__length">
+                {comments.length} {comments.length === 1 || comments.length === 0 ? "Comment" : "Comments"}
+            </section>
+
             {comments
             .sort((a, b) => b.timestamp - a.timestamp)
             .map((comment) => {

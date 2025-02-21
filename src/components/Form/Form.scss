@@ -45,6 +45,15 @@
             height: 2.5rem;
             padding: .5rem 1rem;
         }
+
+        &:focus {
+            border: .125rem solid $primary-accent-color;
+            outline: none;
+        }
+
+        &--error {
+            border: .125rem solid #B10606;
+        }
     }
 
     &__text-area {
