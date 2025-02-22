@@ -1,0 +1,17 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.back {
+    text-decoration: none;
+
+    &__container {
+        @include flex(row, flex-end, center);
+        gap: 0.5rem;
+    }
+
+    &__text {
+        font-family: $typeface-secondary;
+        color: $primary-accent-color;
+        font-size: 1.2rem;
+    }
+}

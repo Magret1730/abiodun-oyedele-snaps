@@ -1,0 +1,111 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form {
+    margin: 2rem 1rem;
+    font-family: $typeface-secondary;
+
+    @include tablet-breakpoint {
+        margin: 2.5rem 1.5rem 0 1.5rem;
+    }
+
+    @include desktop-breakpoint {
+        margin: 4.5rem 1.5rem 0 1.5rem;
+    }
+
+    @include desktop-breakpoint {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &__label {
+        font-size: 0.7rem;
+
+        @include tablet-breakpoint {
+            font-size: 1.2rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__input {
+        display: block;
+        height: 1.875rem;
+        width: 100%;
+        margin-top: .5rem;
+        margin-bottom: 0.9rem;
+        padding: .5rem;
+        border: .125rem solid $border-color;
+        border-radius: 0.5rem;
+
+        @include tablet-breakpoint {
+            height: 2.5rem;
+            padding: .5rem 1rem;
+        }
+
+        &:focus {
+            border: .125rem solid $primary-accent-color;
+            outline: none;
+        }
+
+        &--error {
+            border: .125rem solid $primary-error-color;
+        }
+    }
+
+    &__text-area {
+        @extend .form__input;
+        width: 100%;
+        resize: none;
+        height: 4rem;
+
+        @include tablet-breakpoint {
+            height: 6rem;
+        }
+    }
+
+    &__submit-box {
+        @include flex(row, flex-end, center);
+    }
+
+    &__submit {
+        color: $alternate-text-color;
+        background-color: $primary-accent-color;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.4rem;
+        font-size: .755rem;
+        border: $primary-accent-color;
+        cursor: pointer;
+
+        @include tablet-breakpoint {
+            padding: 0.6rem 1.5rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    &__error {
+        @include flex(row, center, center);
+        border: .0625rem solid #f2a6a6;
+        color: $primary-error-color;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        padding: 0.5rem 0;
+        border-radius: .375rem;
+        background-color: $primary-error-background-color;
+    }
+
+    &__success {
+        display: block;
+        @include flex(row, center, center);
+        margin-right: 1rem;
+        color: $alternate-text-color;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+        border-radius: .375rem;
+        background-color: $primary-accent-color;
+    }
+}

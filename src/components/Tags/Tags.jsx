@@ -10,7 +10,7 @@ export default function Tags({ tags, className, handleTagsClick, activeTags}) {
                     const isActiveTag = activeTags === tag;
                     return (         
                         <button key={tag} onClick={handleTagsClick}
-                            className={ `${className === "tags" ? "tags__button" : "tags__button-filter"} 
+                            className={ `${className === "tags" || className === "tags__details" ? "tags__button" : "tags__button-filter"} 
                                         ${isActiveTag ? "tags__button--clickable" : ""}` }>
                             {tag}
                         </button>
