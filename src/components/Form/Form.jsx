@@ -6,8 +6,9 @@ import axios from "axios";
 export default function Form({fetchComments}) {
     const [ name, setName ] = useState("");
     const [ comment, setComment ] = useState("");
-    // const [nameError, setNameError] = useState(false);
-    // const [commentError, setCommentError] = useState(false);
+    const [nameError, setNameError] = useState(false);
+    const [commentError, setCommentError] = useState(false);
+    const [ successMessage, setSuccessMessage ] = useState(false);
 
     const {id} = useParams();
     const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
@@ -15,47 +16,49 @@ export default function Form({fetchComments}) {
 
 
     const handleChangeName = (event) => {
-        setName(event.target.value);
+        const { value } = event.target;
+
+        setName(value);
+        isNameValid(value);
     }
 
     const handleChangeComment = (event) => {
-        setComment(event.target.value);
+        const { value } = event.target;
+
+        setComment(value);
+        isCommentValid(value);
     }
 
-    const isNameValid = () => {
+    const isNameValid = (name) => {
         if (!name) {
-            alert("Fill out the name field");
+            setNameError("Name is required!!!")
             return false;
-        }
-
-        if (name.length < 2) {
-            alert("Name should be greater than one length!!!");
+        } else if (name.length < 2) {
+            setNameError("Name must be at least two characters long!!!")
             return false;
+        } else {
+            setNameError("");
+            return true;
         }
-
-        return true;
     }
 
-    const isCommentValid = () => {
+    const isCommentValid = (comment) => {
         if (!comment) {
-            alert("Fill out the comment field");
+            setCommentError("Comment is required!!!")
             return false;
+        } else {
+            setCommentError("")
+            return true;
         }
-
-        return true;
     }
 
     const isFormValid = () => {
-        // if (!name || !comment) {
-        //     alert("Fill out each fields");
-        //     return false;
-        // }
 
-        if (!isNameValid()) {
+        if (!isNameValid(name)) {
             return false;
         }
 
-        if (!isCommentValid()) {
+        if (!isCommentValid(comment)) {
             return false;
         }
 
@@ -83,7 +86,7 @@ export default function Form({fetchComments}) {
 
         try {
             if (isFormValid()) {
-                alert("Submitted successfully!!!");
+                setSuccessMessage("Submitted successfully!!!");
                 setName("");
                 setComment("");
 
@@ -93,6 +96,12 @@ export default function Form({fetchComments}) {
                 }
 
                 fetchComments();
+                setNameError("");
+                setCommentError("");
+
+                setTimeout(() => {
+                    setSuccessMessage("");
+                }, 3000);
             } else {
                 console.error("Error in the form");
             }
@@ -106,27 +115,32 @@ export default function Form({fetchComments}) {
         <form onSubmit={handleSubmit} className="form">
             <label className="form__label">Name
                 <input
-                    className="form__input"
-                    // className={`form__input ${ isNameValid() === false ? "" : "form__input--error" }`}
+                    className={ `form__input ${ nameError ? "form__input--error" : "" }` }
                     type="text"
                     name="name"
                     value={name}
                     onChange={handleChangeName}
                 />
             </label>
+            { nameError && <p className="form__error">{ nameError }</p> }
 
             <label className="form__label">Comment
                 <textarea
-                    className="form__text-area"
+                    className={ `form__text-area ${ commentError ? "form__input--error" : "" }` }
                     type="text"
                     name="comment"
                     value={comment}
                     onChange={handleChangeComment}
                 />
             </label>
+            { commentError && <p className="form__error">{ commentError }</p> }
 
             <div className="form__submit-box">
-                <button className="form__submit">Submit</button>
+                { successMessage && <p className="form__success">{ successMessage }</p> }
+                <button className={ `form__submit ${ successMessage ? "form__success" : "" }` }>
+                    Submit
+                </button>
+                    {/* { successMessage && <p className="form__success">{ successMessage }</p> }                 */}
             </div>
         </form>
     )

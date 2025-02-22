@@ -52,7 +52,7 @@
         }
 
         &--error {
-            border: .125rem solid #B10606;
+            border: .125rem solid $primary-error-color;
         }
     }
 
@@ -72,7 +72,7 @@
     }
 
     &__submit {
-        color: white;
+        color: $alternate-text-color;
         background-color: $primary-accent-color;
         padding: 0.4rem 0.8rem;
         border-radius: 0.4rem;
@@ -84,5 +84,28 @@
             padding: 0.6rem 1.5rem;
             font-size: 1.2rem;
         }
+    }
+
+    &__error {
+        @include flex(row, center, center);
+        border: .0625rem solid #f2a6a6;
+        color: $primary-error-color;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        padding: 0.5rem 0;
+        border-radius: .375rem;
+        background-color: $primary-error-background-color;
+    }
+
+    &__success {
+        display: block;
+        @include flex(row, center, center);
+        margin-right: 1rem;
+        color: $alternate-text-color;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+        border-radius: .375rem;
+        background-color: $primary-accent-color;
     }
 }
