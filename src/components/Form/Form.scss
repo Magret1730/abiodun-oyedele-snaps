@@ -78,6 +78,7 @@
         border-radius: 0.4rem;
         font-size: .755rem;
         border: $primary-accent-color;
+        cursor: pointer;
 
         @include tablet-breakpoint {
             padding: 0.6rem 1.5rem;

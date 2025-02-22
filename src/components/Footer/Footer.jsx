@@ -1,9 +1,9 @@
 import "./Footer.scss";
 import NavLogo from "../NavLogo/NavLogo";
-import FacebookIcon from "../../assets/Icons/Facebook.svg";
-import XIcon from "../../assets/Icons/X_twitter.svg";
-import InstagramIcon from "../../assets/Icons/Instagram.svg";
-import PinterestIcon from "../../assets/Icons/Pinterest.svg";
+import FacebookIcon from "../../assets/images/Facebook.svg";
+import XIcon from "../../assets/images/X_twitter.svg";
+import InstagramIcon from "../../assets/images/Instagram.svg";
+import PinterestIcon from "../../assets/images/Pinterest.svg";
 
 export default function Footer() {
     return (

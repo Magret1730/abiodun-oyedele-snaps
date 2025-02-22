@@ -1,5 +1,5 @@
 import "./NavBackHome.scss";
-import ArrowIcon from "../../assets/Icons/Arrow.svg";
+import ArrowIcon from "../../assets/images/Arrow.svg";
 import { Link } from "react-router-dom";
 
 export default function NavBackHome() {

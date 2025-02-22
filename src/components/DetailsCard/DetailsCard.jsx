@@ -1,6 +1,6 @@
 import "./DetailsCard.scss";
 import DetailsTags from "../DetailsTag/DetailsTag";
-import LikedOutline from "../../assets/Icons/Like_Outline.svg";
+import LikedOutline from "../../assets/images/Like_Outline.svg";
 
 export default function DetailsCard({ photo }) {
     const likeDate = new Date(photo.timestamp).toLocaleDateString();

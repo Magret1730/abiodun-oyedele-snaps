@@ -34,7 +34,7 @@
 
     &__box {
         @include tablet-breakpoint {
-            @include flex(row, flex-end, center);
+            @include flex(row, flex-end, baseline);
             gap: 5rem;
         }
 
