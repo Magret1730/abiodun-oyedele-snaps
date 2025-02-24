@@ -17,9 +17,6 @@ function Photo() {
 
     useEffect(() => {
         fetchPhotos();
-    }, []);
-
-    useEffect(() => {
         fetchComments();
     }, []);
 

@@ -19,9 +19,6 @@ function Home() {
 
     useEffect(() => {
         fetchPhotos();
-    }, []);
-
-    useEffect(() => {
         fetchTags();
     }, []);
 
@@ -60,12 +57,10 @@ function Home() {
     const handleFilterClick = (e) => {
         const clickedTag = e.target.textContent;
 
-        // If the clicked tag is already active, deactivate it
         if (activeTags === clickedTag) {
             setActiveTags(null);
             setFilteredPhotos(photos);
         } else {
-            // Otherwise, set the clicked tag as the active tag
             setActiveTags(clickedTag);
 
             const newFilteredPhotos = photos.filter((photo) => photo.tags.includes(clickedTag));
