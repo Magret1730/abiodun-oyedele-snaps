@@ -14,8 +14,10 @@ function Home() {
     const [filteredPhotos, setFilteredPhotos] = useState([]);
     const [tags, setTags] = useState(null);
 
-    const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
+    const BASE_URL_PREVIOUS = "https://unit-3-project-c5faaab51857.herokuapp.com";
     const API_KEY = "e3b638d4-7a00-4b19-8713-677d535d16cc";
+
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
 
     useEffect(() => {
         fetchPhotos();
@@ -24,7 +26,10 @@ function Home() {
 
     async function fetchPhotos() {
         try {
-            const { data } = await axios.get(`${BASE_URL}/photos?api_key=${API_KEY}`);
+            // const { data } = await axios.get(`${BASE_URL}/photos?api_key=${API_KEY}`);
+            const {data} = await axios.get(`${BASE_URL}/photos`);
+            // console.log(data);
+
             setPhotos(data);
             setFilteredPhotos(data);
         } catch (error) {
@@ -38,7 +43,8 @@ function Home() {
 
     async function fetchTags() {
         try {
-            const {data} = await axios.get(`${BASE_URL}/tags?api_key=${API_KEY}`);
+            const {data} = await axios.get(`${BASE_URL_PREVIOUS}/tags?api_key=${API_KEY}`);
+            // const {data} = await axios.get(`${BASE_URL}/tags`);
             setTags(data);
 
         } catch (error) {
