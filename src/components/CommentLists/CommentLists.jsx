@@ -10,9 +10,9 @@ export default function CommentLists({ comments }) {
             </section>
 
             {comments
-            .sort((a, b) => b.timestamp - a.timestamp)
-            .map((comment) => {
-                return <Comment comment={comment} key={comment.id}/>
+                .sort((a, b) => b.timestamp - a.timestamp)
+                .map((comment) => {
+                    return <Comment comment={comment} key={comment.id}/>
             })}
         </section>
     )

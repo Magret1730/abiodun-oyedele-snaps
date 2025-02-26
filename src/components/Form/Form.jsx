@@ -11,8 +11,8 @@ export default function Form({fetchComments}) {
     const [ successMessage, setSuccessMessage ] = useState(false);
 
     const {id} = useParams();
-    const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-    const API_KEY = "e3b638d4-7a00-4b19-8713-677d535d16cc";
+
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 
     const handleChangeName = (event) => {
@@ -73,7 +73,7 @@ export default function Form({fetchComments}) {
         }
 
         try {
-            const response = await axios.post(`${BASE_URL}/photos/${id}/comments?api_key=${API_KEY}`, newComment);
+            const response = await axios.post(`${BASE_URL}/photos/${id}/comments`, newComment);
 
             return response;
         } catch (error) {
