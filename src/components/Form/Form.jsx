@@ -140,7 +140,6 @@ export default function Form({fetchComments}) {
                 <button className={ `form__submit ${ successMessage ? "form__success" : "" }` }>
                     Submit
                 </button>
-                    {/* { successMessage && <p className="form__success">{ successMessage }</p> }                 */}
             </div>
         </form>
     )

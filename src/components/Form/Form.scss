@@ -40,6 +40,8 @@
         padding: .5rem;
         border: .125rem solid $border-color;
         border-radius: 0.5rem;
+        font-family: $typeface-secondary;
+        @include typeKit(1rem, null, 500, null);
 
         @include tablet-breakpoint {
             height: 2.5rem;
@@ -92,6 +94,7 @@
         color: $primary-error-color;
         font-size: 0.875rem;
         margin-top: 0.25rem;
+        margin-bottom: 1rem;
         padding: 0.5rem 0;
         border-radius: .375rem;
         background-color: $primary-error-background-color;
