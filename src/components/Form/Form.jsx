@@ -3,6 +3,7 @@ import "./Form.scss";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+// Displays the form with neccesary validations
 export default function Form({fetchComments}) {
     const [ name, setName ] = useState("");
     const [ comment, setComment ] = useState("");
@@ -10,11 +11,13 @@ export default function Form({fetchComments}) {
     const [commentError, setCommentError] = useState(false);
     const [ successMessage, setSuccessMessage ] = useState(false);
 
+    // Id gotten from useParams
     const {id} = useParams();
-    const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-    const API_KEY = "e3b638d4-7a00-4b19-8713-677d535d16cc";
 
+    // Frontend URL gotten from env file
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
 
+    // Function handles name change in state variable
     const handleChangeName = (event) => {
         const { value } = event.target;
 
@@ -22,6 +25,7 @@ export default function Form({fetchComments}) {
         isNameValid(value);
     }
 
+    // Function handles comment change in state variable
     const handleChangeComment = (event) => {
         const { value } = event.target;
 
@@ -29,6 +33,7 @@ export default function Form({fetchComments}) {
         isCommentValid(value);
     }
 
+    // Function validates change of name
     const isNameValid = (name) => {
         if (!name) {
             setNameError("Name is required!!!")
@@ -42,6 +47,7 @@ export default function Form({fetchComments}) {
         }
     }
 
+     // Function validates change of comment
     const isCommentValid = (comment) => {
         if (!comment) {
             setCommentError("Comment is required!!!")
@@ -52,6 +58,7 @@ export default function Form({fetchComments}) {
         }
     }
 
+    // Function vaidates the form
     const isFormValid = () => {
 
         if (!isNameValid(name)) {
@@ -65,6 +72,7 @@ export default function Form({fetchComments}) {
         return true;
     }
 
+    // Function handles post request of comments from backend api
     const postComment = async (name, comment) => {
 
         const newComment = {
@@ -73,7 +81,7 @@ export default function Form({fetchComments}) {
         }
 
         try {
-            const response = await axios.post(`${BASE_URL}/photos/${id}/comments?api_key=${API_KEY}`, newComment);
+            const response = await axios.post(`${BASE_URL}/photos/${id}/comments`, newComment);
 
             return response;
         } catch (error) {
@@ -81,6 +89,7 @@ export default function Form({fetchComments}) {
         }
     }
 
+    // Function to submit form
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -140,7 +149,6 @@ export default function Form({fetchComments}) {
                 <button className={ `form__submit ${ successMessage ? "form__success" : "" }` }>
                     Submit
                 </button>
-                    {/* { successMessage && <p className="form__success">{ successMessage }</p> }                 */}
             </div>
         </form>
     )

@@ -2,6 +2,7 @@ import "./NavBackHome.scss";
 import ArrowIcon from "../../assets/images/Arrow.svg";
 import { Link } from "react-router-dom";
 
+// Displays the back home on the details page
 export default function NavBackHome() {
     return (
         <>

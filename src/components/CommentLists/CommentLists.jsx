@@ -1,8 +1,8 @@
 import "./CommentLists.scss";
 import Comment from "../Comment/Comment";
 
+// Components renders a list of comments associated with a particular item.
 export default function CommentLists({ comments }) {
-
     return (
         <section className="comments">
             <section className="comments__length">
@@ -10,9 +10,9 @@ export default function CommentLists({ comments }) {
             </section>
 
             {comments
-            .sort((a, b) => b.timestamp - a.timestamp)
-            .map((comment) => {
-                return <Comment comment={comment} key={comment.id}/>
+                .sort((a, b) => b.timestamp - a.timestamp)
+                .map((comment) => {
+                    return <Comment comment={comment} key={comment.id}/>
             })}
         </section>
     )

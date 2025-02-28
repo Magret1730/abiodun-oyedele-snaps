@@ -2,6 +2,8 @@ import "./DetailsCard.scss";
 import DetailsTags from "../DetailsTag/DetailsTag";
 import LikedOutline from "../../assets/images/Like_Outline.svg";
 
+// Displays detailed information about a photo, including the image,
+// photographer, likes, and associated tags.
 export default function DetailsCard({ photo }) {
     const likeDate = new Date(photo.timestamp).toLocaleDateString();
 
@@ -10,6 +12,7 @@ export default function DetailsCard({ photo }) {
             <section className="details__containers" key={photo.id}>                    
                 <img className="details__image" src={photo.photo} alt={photo.photographer} />
 
+                {/* Rendering the DetailsTags component with associated tags */}
                 <DetailsTags key={photo.tags} tags={photo.tags}/>
 
                 <section className="details__container">

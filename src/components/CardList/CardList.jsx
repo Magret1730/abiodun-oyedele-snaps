@@ -1,23 +1,13 @@
 import "./CardList.scss";
-import Tags from "../Tags/Tags";
-import { Link } from "react-router-dom";
+import Card from "../Card/Card";
 
+// CardList Component renders a list of photo cards.
 export default function CardList({ isActive, photos }) {
     return (
         <section className="cardlist">
+            {/* Iterating over the photos array and rendering a Card component for each photo */}
             {photos.map((photo) => {
-                return (
-                    <div className={ `${isActive ? "cardlist__containers-filters" : "cardlist__containers"}` } key={photo.id}>
-                            <div className="cardlist__container">
-                                <Link key={photo.id} to={`/photo/${photo.id}`}>
-                                    <img className="cardlist__image" src={photo.photo} alt={photo.photographer} />
-                                </Link>
-                                <p className="cardlist__name">{photo.photographer}</p>
-                            </div>
-
-                        <Tags key={photo.tags} tags={photo.tags} className={"tags"} />
-                    </div>
-                )
+                return <Card isActive={isActive} photo={photo} key={photo.id}/>
             })}
         </section>
     )

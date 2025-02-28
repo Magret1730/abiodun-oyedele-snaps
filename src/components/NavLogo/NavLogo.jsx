@@ -1,5 +1,6 @@
 import "./NavLogo.scss";
 
+// Displays the nav logo
 export default function NavLogo() {
     return (
         <a className="logo" href="/">

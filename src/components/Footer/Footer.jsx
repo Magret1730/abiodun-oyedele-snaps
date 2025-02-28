@@ -5,6 +5,7 @@ import XIcon from "../../assets/images/X_twitter.svg";
 import InstagramIcon from "../../assets/images/Instagram.svg";
 import PinterestIcon from "../../assets/images/Pinterest.svg";
 
+// Footer section of the page
 export default function Footer() {
     return (
         <article className="footer">
