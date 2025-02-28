@@ -1,5 +1,6 @@
 import "./Hero.scss";
 
+// Displays the hero texts
 export default function Hero({ isActive }) {
     return (
         <section className="hero">

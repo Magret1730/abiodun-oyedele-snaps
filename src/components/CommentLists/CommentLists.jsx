@@ -1,8 +1,8 @@
 import "./CommentLists.scss";
 import Comment from "../Comment/Comment";
 
+// Components renders a list of comments associated with a particular item.
 export default function CommentLists({ comments }) {
-
     return (
         <section className="comments">
             <section className="comments__length">

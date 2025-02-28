@@ -20,6 +20,7 @@ function Photo() {
         fetchComments();
     }, []);
 
+    // Fetches photo from backend api
     async function fetchPhotos() {
         try {
             const {data} = await axios.get(`${BASE_URL}/photos/${id}`);
@@ -37,6 +38,7 @@ function Photo() {
         return <div>loading...</div>
     }
 
+    // Fetches comments from backend api
     async function fetchComments() {
         try{
             const {data} = await axios.get(`${BASE_URL}/photos/${id}/comments`);

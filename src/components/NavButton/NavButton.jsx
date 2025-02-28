@@ -1,5 +1,6 @@
 import "./NavButton.scss";
 
+// This handles the filter icon on the nav bar
 export default function NavButton({ clickHandler, isActive }) {
     return (
         <button className= { `button ${isActive ? "button--active" : ""} `} onClick={clickHandler} >

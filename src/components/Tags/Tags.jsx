@@ -1,5 +1,6 @@
 import "./Tags.scss";
 
+// Displays the tags associated to each page on the photos page
 export default function Tags({ tags, className, handleTagsClick, activeTags}) {
     return (
         <section className={className}>

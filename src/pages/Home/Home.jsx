@@ -7,6 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import Tags from "../../components/Tags/Tags";
 import axios from "axios";
 
+// This displays the Home page
 function Home() {
     const [photos, setPhotos] = useState(null);
     const [isActive, setIsActive] = useState(false);
@@ -21,6 +22,7 @@ function Home() {
         fetchTags();
     }, []);
 
+    // This handles fetch photos from the backend
     async function fetchPhotos() {
         try {
             const {data} = await axios.get(`${BASE_URL}/photos`);
@@ -36,6 +38,7 @@ function Home() {
         return <div>loading...</div>
     }
 
+    // This makes the api call to fetch tags from backend
     async function fetchTags() {
         try {
             const {data} = await axios.get(`${BASE_URL}/tags`);
@@ -54,6 +57,7 @@ function Home() {
         setIsActive(!isActive);
     }
 
+    // This handles filter click
     const handleFilterClick = (e) => {
         const clickedTag = e.target.textContent;
 
